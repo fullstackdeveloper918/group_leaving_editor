@@ -36,3 +36,91 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+
+  .autoComplete_wrapper {
+      all: unset;
+      box-sizing: border-box;
+      border: none;
+  }
+
+  #cover_search_input {
+      all: unset;
+      width: 100%;
+      height: calc(1.5em + 1rem + 2px);
+      font-size: .875rem;
+      line-height: 1.5;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      box-sizing: border-box;
+  }
+
+  .autoComplete_wrapper > ul {
+      position: absolute;
+      left: -54px;
+      top: 32px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      border-width: 0px;
+      border-radius: 10px;
+      box-shadow: 0 12px 29px rgba(0,0,0,.2);
+  }
+
+  .autoComplete_wrapper > ul > li {
+      font-family: 'Nunito', sans-serif;
+      font-size: .875rem;
+      color: rgb(132, 146, 166);
+  }
+
+  #navbar-main {
+      z-index: 1022; 
+  }
+
+  .input-group-text {
+      cursor: text;
+  }
+
+  #cover_search_form .form-group.focused {
+      border-width: 2px !important;
+      border-color: #5dbadf !important;
+  }
+
+  #cover_search_form .form-group.focused input {
+      height: calc(1.5em + 1rem + 0px) !important;
+  }
+
+  #cover_search_form .form-group:hover:not(.focused) {
+      border-width: 1px !important;
+      border-color: #5dbadf !important;
+  }
+
+  #cover_search_input::placeholder {
+      color: rgba(31,45,61,.5);
+  }
+
+  @media (max-width: 992px) {
+      #card_cover_search_bar_container {
+          order: -1;
+      }
+
+      #account_options {
+          order: -2;
+      }
+  }
+
+  @media (min-width: 992px) {
+      .nav-hover-wrapper:hover {
+          background-color: #d1d8dc;
+          border-radius: 8px;
+      }
+
+      #header-main .btn-info.rounded-pill:hover {
+          background-color: #29c0e7;
+          border-color: #29c0e7;
+      }
+  }
+

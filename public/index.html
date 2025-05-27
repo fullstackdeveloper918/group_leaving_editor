@@ -31,8 +31,37 @@
     <meta charset="utf-8">
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="5dSv7Q-HPWk7pusDFL34Zz2w4uWljBsjTvPo2PnXhJCRmX3cA57USAM0xC_9TJY4NLX6e9LbDNxAgLSDKMUV-g" />
 
+    <meta name="og:site_name" content="Groupgreeting" />
+    <meta name="og:type" content="website" />
+    <meta name="og:title" content="Groupgreeting Cards" />
+    <meta name="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Groupgreeting Cards" />
+    <meta property="og:title" content="Groupgreeting Cards" />
+
+      <meta name="og:description" content="Sign this card for Group Greeting">
+<meta name="og:image" content="https://storage.groupgreeting.com/assets/group_greeting/images/covers/HBD-awesome-co-workers-PR-2021.gif">
+<meta name="og:updated_time" content="1747384515" />
+
+<meta name="twitter:site" content="https%3A%2F%2Fwww.groupgreeting.com%2Fsign%2Fd12e60c5ec0db9c" />
+<meta name="twitter:image" content="https://storage.groupgreeting.com/assets/group_greeting/images/covers/HBD-awesome-co-workers-PR-2021.gif" />
+
+<meta property="og:url" content="https%3A%2F%2Fwww.groupgreeting.com%2Fsign%2Fd12e60c5ec0db9c" />
+<meta property="og:description" content="Sign this card for Group Greeting" />
+<meta property="og:image" content="https://storage.groupgreeting.com/assets/group_greeting/images/covers/HBD-awesome-co-workers-PR-2021.gif" />
+    <!-- <link rel="stylesheet" href="/stylesheets/purpose-blue-light.css"/> -->
     <link rel="stylesheet" href="/stylesheets/purpose-blue-light.css"/>
+    <link rel="stylesheet" href="/stylesheets/application-0.css"/>
+        <link rel="stylesheet" href="/stylesheets/application-1.css"/>
+
+            <link rel="stylesheet" href="/stylesheets/application-2.css"/>
+<link rel="image_src" href="https://storage.groupgreeting.com/assets/group_greeting/images/covers/HBD-awesome-co-workers-PR-2021.gif" />
+
+    <!-- <link rel="stylesheet" href="/stylesheets/purpose-blue-light.css"/> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.02.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"/>
@@ -45,7 +74,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.4.4/css/flag-icons.min.css" integrity="sha512-uvXdJud8WaOlQFjlz9B15Yy2Au/bMAvz79F7Xa6OakCl2jvQPdHD0hb3dEqZRdSwG4/sknePXlE7GiarwA/9Wg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
-    <link rel="stylesheet" href="/stylesheets/application-0abda8d78d831a5f76a1452eed67349a60e9059e86cbc297914f" media="all" />
+    <!-- <link rel="stylesheet" href="/stylesheets/application-0abda8d78d831a5f76a1452eed67349a60e9059e86cbc297914f" media="all" /> -->
 
     <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon-62ce5cccb93c15b4337aaeb4a430862bfccf3836da9c44c91015a80fd53254dd.ico" />
     <link rel="apple-touch-icon" type="image/png" href="/assets/favicons/apple-touch-icon-608426f401771ee4fa69d9d16393bf14ab1b642b52bd3efefd49cd3458328b70.png" sizes="120x120" />
@@ -57,10 +86,14 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/javascripts/purpose.js"></script>
+    <!-- <script src="/javascripts/purpose.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
 	  <script src="/javascripts/greeting.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+	  <!-- <script src="/javascripts/greeting.js"></script> -->
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -125,15 +158,9 @@
         message: '<style>\n  /*https://stackoverflow.com/a/48173885*/\n  .global_spinner_img {\n    width: 80px;\n    content: url(\'https://storage.groupgreeting.com/as/group_greeting/images/graphics/animated/logomark-page-loader.gif\');\n  }\n<\/style>\n\n<div class=\"modal-content\"\n     style=\"width: 100px; margin: auto; padding-left:2px\">\n  <div class=\"center-block text-center\">\n    <img class=\"global_spinner_img\">\n  <\/div>\n<\/div>\n',
       };
     </script>
-
-
-    
-
-    
-
-
-    <script src="/javascripts/application-0cc9a85a4a611ec385011c9a8ee3b58b8a0a08e48e280cc16a45"></script>
-    <meta name="csrf-param" content="authenticity_token" />
+    <script src="/javascripts/appilcation-0.js"></script>
+    <!-- <script src="/javascripts/application-0cc9a85a4a611ec385011c9a8ee3b58b8a0a08e48e280cc16a45"></script> -->
+    <!-- <meta name="csrf-param" content="authenticity_token" />
 <meta name="csrf-token" content="5dSv7Q-HPWk7pusDFL34Zz2w4uWljBsjTvPo2PnXhJCRmX3cA57USAM0xC_9TJY4NLX6e9LbDNxAgLSDKMUV-g" />
 
     <meta name="og:site_name" content="Groupgreeting" />
@@ -154,12 +181,13 @@
 
 <meta property="og:url" content="https%3A%2F%2Fwww.groupgreeting.com%2Fsign%2Fd12e60c5ec0db9c" />
 <meta property="og:description" content="Sign this card for Group Greeting" />
-<meta property="og:image" content="https://storage.groupgreeting.com/assets/group_greeting/images/covers/HBD-awesome-co-workers-PR-2021.gif" />
+<meta property="og:image" content="https://storage.groupgreeting.com/assets/group_greeting/images/covers/HBD-awesome-co-workers-PR-2021.gif" /> -->
 
-<link rel="image_src" href="https://storage.groupgreeting.com/assets/group_greeting/images/covers/HBD-awesome-co-workers-PR-2021.gif" />
+<!-- <link rel="image_src" href="https://storage.groupgreeting.com/assets/group_greeting/images/covers/HBD-awesome-co-workers-PR-2021.gif" /> -->
 
 
-  <link rel="stylesheet" href="/stylesheets/base64_fonts-e48f839b1b70b92338af64bac61bf0aa0c606ba2265b5c34f14" media="all" />
+  <!-- <link rel="stylesheet" href="/stylesheets/base64_fonts-e48f839b1b70b92338af64bac61bf0aa0c606ba2265b5c34f14.css" media="all" /> -->
+  <!-- <link rel="stylesheet" href="/stylesheets/base64_fonts-e48f839b1b70b92338af64bac61bf0aa0c606ba2265b5c34f14" media="all" /> -->
 
   
 
@@ -1151,43 +1179,7 @@
 
               </li>
 
-              <li id="canvas_page_back" class="canvas_page"
-                  style=""
-              >
-                <div class='container w-100 h-100'>
-
-                  <div class='row justify-content-center back_cover_middle_content'>
-                    <div>
-                      <img src="https://storage.groupgreeting.com/assets/group_greeting/images/graphics/social_media/otp_tree_200x200.gif"
-                           loading="lazy"
-                           class="img-thumbnail border-0 shadow-none mb-2"
-                           width="200"
-                           height="200" />
-                    </div>
-
-                    <p class='text-center pt-2 px-5 tiny'>
-                      
-      This card helped plant a tree through our partner OneTreePlanted.org.
-      <br>
-      Thank you for supporting our goal of planting 1 million trees.
-    
-                    </p>
-                  </div>
-
-                  <div class='row justify-content-center back_cover_bottom_content'>
-                    <span class='text-center px-4 pt-5 small'>
-                      
-      Sending appreciation one card at a time
-      <br>
-      <strong>
-        www.groupgreeting.com
-      </strong>
-    
-                    </span>
-                  </div>
-
-                </div>
-              </li>
+             
           </ul>
 
           <span class="position-absolute text-dark left_arrow_button arrow_button canvas_prev">
@@ -1791,7 +1783,7 @@
           <div class="pl-2 border-left">
             <button type="button"
                     class="btn btn-info btn-sm shadow-dark-sm submit_all_entries_button">
-              Save
+              Saveaaa
             </button>
           </div>
 

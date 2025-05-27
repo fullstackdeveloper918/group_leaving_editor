@@ -702,39 +702,101 @@ function bind_sign_page(t) {
         return a.append("giphy[signer_name]", n), current_user_signer_name || window.localStorage.setItem("signer_name", n), a.append("signer_email", current_user_signer_email), a
     }
 
-    function J() {
-        if (V()) {
-            let e, t, a = new FormData;
-            if ($("#text_preview_container").is(":visible")) {
-                t = Z();
-                for (let e of t.entries()) a.append(e[0], e[1]);
-                e = $("#finalize_entry_text_form").find(".entry_page_number").val()
-            }
-            if ($("#photo_preview_container").is(":visible")) {
-                t = B();
-                for (let e of t.entries()) a.append(e[0], e[1]);
-                e = $("#finalize_entry_photo_form").find(".entry_page_number").val()
-            }
-            if ($("#giphy_preview_container").is(":visible")) {
-                t = X();
-                for (let e of t.entries()) a.append(e[0], e[1]);
-                e = $("#finalize_entry_giphy_form").find(".entry_page_number").val()
-            }
-            Array.from(a.keys()).length && ($.blockUI(blockUILoadingConfig), $.ajax({
-                method: "POST",
-                url: "/entries/add_entry",
-                contentType: !1,
-                processData: !1,
-                data: a,
-                success: function() {
-                    if ($("#photo_preview_container").is(":visible")) {
-                        if (t.get("photo[eid]")) return K(t), void Q()
-                    }
-                    G(e)
-                }
-            }).done((function() {})))
-        }
+//    function J() {
+//     // if (V()) {
+//     let e, t, a = new FormData();
+//     if ($("#text_preview_container").is(":visible")) {
+//         t = Z();
+//         for (let entry of t.entries()) a.append(entry[0], entry[1]);
+//         e = $("#finalize_entry_text_form").find(".entry_page_number").val();
+//     }
+//     if ($("#photo_preview_container").is(":visible")) {
+//         t = B();
+//         for (let entry of t.entries()) a.append(entry[0], entry[1]);
+//         e = $("#finalize_entry_photo_form").find(".entry_page_number").val();
+//     }
+//     if ($("#giphy_preview_container").is(":visible")) {
+//         t = X();
+//         for (let entry of t.entries()) a.append(entry[0], entry[1]);
+//         e = $("#finalize_entry_giphy_form").find(".entry_page_number").val();
+//     }
+    
+//     if (Array.from(a.keys()).length) {
+//         $.blockUI(blockUILoadingConfig);
+
+//         axios.post("https://dating.goaideme.com/card/add-editor-messages", a, {
+//             headers: {
+//                 'Content-Type': 'multipart/form-data'
+//             }
+//         })
+//         .then(function(response) {
+//             if ($("#photo_preview_container").is(":visible")) {
+//                 if (t.get("photo[eid]")) {
+//                     K(t);
+//                     Q();
+//                     return;
+//                 }
+//             }
+//             G(e);
+//         })
+//         .catch(function(error) {
+//             // Handle error if needed
+//             console.error(error);
+//         })
+//         .finally(function() {
+//             // Any cleanup or unblock UI if needed
+//             $.unblockUI();
+//         });
+//     }
+//     // }
+// }
+function J() {
+    let data = {};
+    let e;
+
+    if ($("#text_preview_container").is(":visible")) {
+        data = Object.fromEntries(Z().entries());
+        e = $("#finalize_entry_text_form").find(".entry_page_number").val();
     }
+    if ($("#photo_preview_container").is(":visible")) {
+        data = Object.fromEntries(B().entries());
+        e = $("#finalize_entry_photo_form").find(".entry_page_number").val();
+    }
+    if ($("#giphy_preview_container").is(":visible")) {
+        data = Object.fromEntries(X().entries());
+        e = $("#finalize_entry_giphy_form").find(".entry_page_number").val();
+    }
+let item={
+    editor_messages:data,
+    user_uuid:"",
+    messages_unique_id:""
+}
+    if (Object.keys(data).length) {
+        $.blockUI(blockUILoadingConfig);
+
+        axios.post("https://dating.goaideme.com/card/add-editor-messages", item, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(function(response) {
+            if ($("#photo_preview_container").is(":visible")) {
+                if (data["photo[eid]"]) {
+                    K(data);
+                    Q();
+                    return;
+                }
+            }
+            G(e);
+        })
+        .catch(function(error) {
+            console.error(error);
+        })
+        .finally(function() {
+            // $.unblockUI();
+        });
+    }
+}
 
     function K(e) {
         const t = e.get("photo[eid]"),
@@ -841,7 +903,7 @@ function bind_sign_page(t) {
         Ge((function() {
             $.blockUI(blockUILoadingConfig), $.ajax({
                 method: "GET",
-                url: "/entries/" + a + "/details",
+                url: "/entrie/" + a + "/details",
                 success: function(e) {
                     $.unblockUI(), he(e, !1)
                 }
@@ -1121,7 +1183,7 @@ function bind_sign_page(t) {
             url: "/entries/check_for_new_entries",
             data: a
         }).done((function(t) {
-            $.unblockUI(), current_timestamp = t.update_time, t.entries.length > 0 ? Ge((function() {
+            $.unblockUI(), current_timestamp = t.update_time, t?.entries?.length  ? Ge((function() {
                 let e = Ae(),
                     t = Ee();
                 (e || t) && (Se(), $("#overlap_fixed_forced_alert").fadeIn("fast"), $("html").width() < 960 && $("html").animate({
